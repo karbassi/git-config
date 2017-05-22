@@ -3,7 +3,7 @@
 Git looks in the `~/.config/git/config` file, which is specific to each user.
 
 ## Installation
-```
+```sh
 # Backup git config folder
 mv ~/.config/git{,-bak}
 
