@@ -77,21 +77,24 @@
     log = true
 
 # rewrites of repo paths
-[url "git@github.com:"]
-    insteadOf = "https://github.com/"
-    pushInsteadOf = "github:"
-    pushInsteadOf = "git://github.com/"
-    pushInsteadOf = "https://github.com/"
-
-[url "git://github.com/"]
-    insteadOf = "github:"
-
-[url "git@gist.github.com:"]
-    pushInsteadOf = "gist:"
-    pushInsteadOf = "git://gist.github.com/"
-
-[url "git://gist.github.com/"]
-    insteadOf = "gist:"
+# [url "git@github.com:"]
+#     insteadOf = "https://github.com/"
+#     pushInsteadOf = "github:"
+#     pushInsteadOf = "git://github.com/"
+#     pushInsteadOf = "https://github.com/"
+# 
+# [url "git://github.com/"]
+#     insteadOf = "github:"
+# 
+# [url "git@gist.github.com:"]
+#     pushInsteadOf = "gist:"
+#     pushInsteadOf = "git://gist.github.com/"
+# 
+# [url "git://gist.github.com/"]
+#     insteadOf = "gist:"
+# 
+# [url "https://github"]
+#     insteadOf = git://github
 
 # correct typos
 [help]
@@ -99,9 +102,6 @@
 
 [branch]
     autosetupmerge = true
-
-[url "https://github"]
-    insteadOf = git://github
 
 # push easily. http://stackoverflow.com/a/23918418/89484
 [push]
@@ -119,7 +119,6 @@
 
 [credential]
     helper = osxkeychain
-
 
 [filter "lfs"]
     clean = git-lfs clean -- %f
