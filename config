@@ -20,6 +20,10 @@
     contrib = !git shortlog -s -n | head -10
     gi = "!gi() { curl -L -s https://www.gitignore.io/api/$@ ;}; gi"
 
+[apply]
+    # Detect whitespace errors when applying a patch
+    whitespace = fix
+
 [core]
     compression = 9
     autocrlf = input
