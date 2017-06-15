@@ -7,3 +7,9 @@
 	user = REPLACE
     # https://help.github.com/articles/creating-a-personal-access-token-for-the-command-line/
 	token = REPLACE 
+
+# rewrites of repo paths
+[url "git@github.com:USERNAME/"]
+    insteadOf = "https://github.com/USERNAME/"
+    pushInsteadOf = "git://github.com/USERNAME/"
+
