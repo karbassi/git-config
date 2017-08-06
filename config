@@ -3,23 +3,25 @@
     path = "local"
 
 [alias]
-    s = stash
-    sa = stash apply
-    sl = stash list
-    sp = stash pop
-    st = status -sb
-    ci = commit -v
+    # Shortcuts
     br = branch
+    ci = commit -v
     co = checkout
     d = diff --word-diff
     dc = diff --word-diff --cached
     lg = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr by %cn)%Creset' --abbrev-commit --date=relative
     lgs = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr by %cn)%Creset' --abbrev-commit --date=relative --shortstat
-    svngrab = !git stash && git svn rebase && git stash apply
+    s = stash
+    sa = stash apply
+    sl = stash list
+    sp = stash pop
+    st = status -sb
     undo-commit = reset --soft HEAD^
-    up = "!f() { git checkout $1 && git fetch $2 && git merge $2/$1; }; f"
+    # Multiple commands / patterns
     contrib = !git shortlog -s -n | head -10
     gi = "!gi() { curl -L -s https://www.gitignore.io/api/$@ ;}; gi"
+    svngrab = !git stash && git svn rebase && git stash apply
+    up = "!f() { git checkout $1 && git fetch $2 && git merge $2/$1; }; f"
 
 [apply]
     # Detect whitespace errors when applying a patch
