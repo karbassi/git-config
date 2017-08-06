@@ -12,6 +12,7 @@
     br = branch
     co = checkout
     d = diff --word-diff
+    dc = diff --word-diff --cached
     lg = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr by %cn)%Creset' --abbrev-commit --date=relative
     lgs = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr by %cn)%Creset' --abbrev-commit --date=relative --shortstat
     svngrab = !git stash && git svn rebase && git stash apply
