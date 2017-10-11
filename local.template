@@ -5,6 +5,6 @@
 
 [github]
 	user = REPLACE
-    # https://help.github.com/articles/creating-a-personal-access-token-for-the-command-line/
+	# https://help.github.com/articles/creating-a-personal-access-token-for-the-command-line/
 	token = REPLACE 
 
