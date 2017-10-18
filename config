@@ -83,8 +83,8 @@
 	pushInsteadOf = "git://github.com/"
 	pushInsteadOf = "https://github.com/"
 
-[url "ssh://git@heroku.com/"]
-	insteadOf = https://git.heroku.com/
+#[url "ssh://git@heroku.com/"]
+#	insteadOf = https://git.heroku.com/
 
 #[url "git://github.com/"]
 #	insteadOf = "github:"
@@ -133,3 +133,5 @@
 [include]
 	path = "local"
 
+[pager]
+	stash = false
