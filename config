@@ -18,7 +18,7 @@
 	gi = "!gi() { curl -L -s https://www.gitignore.io/api/$@ ;}; gi"
 	svngrab = !git stash && git svn rebase && git stash apply
 	up = "!f() { git checkout $1 && git fetch $2 && git merge $2/$1; }; f"
-	last = "!f() { git lgs -${1:-1} --relative-date --graph HEAD; }; f"
+    last = "!f() { git lgs -${1:-1} --relative-date --graph HEAD; }; f"
 
 [apply]
 	# Detect whitespace errors when applying a patch
@@ -77,11 +77,11 @@
 	log = true
 
 # rewrites of repo paths
-[url "git@github.com:"]
-	insteadOf = "https://github.com/"
-	pushInsteadOf = "github:"
-	pushInsteadOf = "git://github.com/"
-	pushInsteadOf = "https://github.com/"
+#[url "git@github.com:"]
+#	insteadOf = "https://github.com/"
+#	pushInsteadOf = "github:"
+#	pushInsteadOf = "git://github.com/"
+#	pushInsteadOf = "https://github.com/"
 
 #[url "ssh://git@heroku.com/"]
 #	insteadOf = https://git.heroku.com/
@@ -129,9 +129,11 @@
 	process = git-lfs filter-process
 	required = true
 
+# Don't use pager for stash
+[pager]
+	stash = false
+
 # use separate file for username / github token / etc
 [include]
 	path = "local"
 
-[pager]
-	stash = false
