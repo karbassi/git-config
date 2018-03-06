@@ -117,6 +117,9 @@
 [fetch]
 	prune = true
 
+[submodule]
+	fetchJobs = 8
+
 [rerere]
 	enabled = 1
 
