@@ -18,7 +18,7 @@
 	gi = "!gi() { curl -L -s https://www.gitignore.io/api/$@ ;}; gi"
 	svngrab = !git stash && git svn rebase && git stash apply
 	up = "!f() { git checkout $1 && git fetch $2 && git merge $2/$1; }; f"
-    last = "!f() { git lgs -${1:-1} --relative-date --graph HEAD; }; f"
+	last = "!f() { git lgs -${1:-1} --relative-date --graph HEAD; }; f"
 
 [apply]
 	# Detect whitespace errors when applying a patch
