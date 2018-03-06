@@ -135,6 +135,7 @@
 # Don't use pager for stash
 [pager]
 	stash = false
+	branch = false
 
 # use separate file for username / github token / etc
 [include]
