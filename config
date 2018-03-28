@@ -19,7 +19,8 @@
 	svngrab = !git stash && git svn rebase && git stash apply
 	up = "!f() { git checkout $1 && git fetch $2 && git merge $2/$1; }; f"
 	last = "!f() { git lgs -${1:-1} --relative-date --graph HEAD; }; f"
-
+	cleanup = "!git branch --merged | grep -v '(^\\*\\|master\\|dev)' | xargs -n1 git branch -d"
+	
 [apply]
 	# Detect whitespace errors when applying a patch
 	whitespace = fix
