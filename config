@@ -20,6 +20,7 @@
 	up = "!f() { git stash && git remote update && git checkout ${1:-master} && git rebase ${2:-origin}/${1:-master} ${1:-master} && git checkout - && git stash pop; }; f"
 	last = "!f() { git lgs -${1:-1} --relative-date --graph HEAD; }; f"
 	cleanup = "!f() { git branch --merged | grep -v '(^\\*\\|master\\|dev)' | xargs -n1 git branch -d ; git checkout -q master && git for-each-ref refs/heads/ \"--format=%(refname:short)\" | while read branch; do mergeBase=$(git merge-base master $branch) && [[ $(git cherry master $(git commit-tree $(git rev-parse $branch^{tree}) -p $mergeBase -m _)) == \"-\"* ]] && git branch -D $branch; done; }; f"
+	start = !git init . && git add -A && git commit --allow-empty -m \"Initialize repository\"
 
 [apply]
 	# Detect whitespace errors when applying a patch
