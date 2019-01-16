@@ -118,6 +118,7 @@
 
 [pull]
 	default = current
+	rebase = true
 
 [fetch]
 	prune = true
@@ -146,3 +147,5 @@
 [include]
 	path = "local"
 
+[rebase]
+	autoStash = true
