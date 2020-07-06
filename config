@@ -1,5 +1,8 @@
 # vim: syntax=gitconfig ts=4 sw=4 sts=4 sr noet
 
+[init]
+	templateDir = ~/.config/git/templates/
+
 [alias]
 	# Shortcuts
 	br = branch
@@ -151,3 +154,4 @@
 	clean = git-lfs clean -- %f
 	smudge = git-lfs smudge -- %f
 	process = git-lfs filter-process
+
