@@ -1,0 +1,3 @@
+[submodule "hooks"]
+	path = hooks
+	url = git@github.com:karbassi/git-hooks-config.git
