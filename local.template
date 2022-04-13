@@ -1,10 +1,32 @@
+# vim: syntax=gitconfig ts=4 sw=4 sts=4 sr noet
+
+# Override anything here
+
 [user]
 	name = REPLACE
-	email = REPLACE 
+	email = REPLACE
 	signingkey = REPLACE
 
 [github]
 	user = REPLACE
 	# https://help.github.com/articles/creating-a-personal-access-token-for-the-command-line/
-	token = REPLACE 
+	token = REPLACE
 
+[commit]
+	gpgsign = true
+
+[pager]
+	# insanely beautiful diffs ==> npm install -g diff-so-fancy
+	diff = diff-so-fancy | less --tabs=4 -RFX
+	show = diff-so-fancy | less --tabs=4 -RFX
+
+[alias]
+	# svngrab = !git stash && git svn rebase && git stash apply
+
+# rewrites of repo paths
+# NOTE: May cause issues with build systems
+# [url "git@github.com:"]
+# 	insteadOf = "https://github.com/"
+# 	pushInsteadOf = "github:"
+# 	pushInsteadOf = "git://github.com/"
+# 	pushInsteadOf = "https://github.com/"

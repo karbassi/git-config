@@ -3,23 +3,22 @@
 Git looks in the `~/.config/git/config` file, which is specific to each user.
 
 ## Quick Install
+
 ```sh
-mkdir -p ~/.config/git && mv ~/.config/git{,-bak} && git clone --recursive https://github.com/karbassi/gitconfig.git ~/.config/git
+(mv ~/.config/git{,-bak} || mkdir -p ~/.config/git) && git clone --recurse-submodules https://github.com/karbassi/gitconfig.git ~/.config/git
 ```
 
 ## Installation
-```sh
-# Make sure you have a ~/.config/git folder
-mkdir -p ~/.config/git
 
-# Backup git config folder
-mv ~/.config/git{,-bak}
+```sh
+# Backup git config folder or Make sure you have a ~/.config/git folder
+mv ~/.config/git{,-bak} || mkdir -p ~/.config/git
 
 # Clone current repo
 git clone --recursive https://github.com/karbassi/gitconfig.git ~/.config/git
 
-# Create local file
-cp ~/.config/git/local.template ~/.config/git/local
+# Duplicate template file: local.template -> local
+cp ~/.config/git/local{.template,}
 ```
 
 ## Additional
