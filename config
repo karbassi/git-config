@@ -6,7 +6,7 @@
 
 # Shortcuts
 [alias]
-	br = branch
+	br = branch --format='%(HEAD) %(color:yellow)%(refname:short)%(color:reset) - %(contents:subject) %(color:green)(%(committerdate:relative)) [%(authorname)]' --sort=-committerdate
 	ci = commit -v
 	co = checkout
 	d = diff --word-diff
@@ -18,7 +18,7 @@
 	sl = stash list
 	sp = stash pop
 	st = status -sb
-	undo-commit = reset --soft HEAD^
+	undo = reset --soft HEAD^
 
 	# Show top 10 contributors
 	contrib = !git shortlog -s -n | head -10
@@ -33,7 +33,7 @@
 	last = "!f() { git lgs -${1:-1} --relative-date --graph HEAD; }; f"
 
 	# Cleanup merged branches
-	cleanup = "!f() { git branch --merged | grep -v '(^\\*\\|master\\|dev)' | xargs -n1 git branch -d ; git checkout -q master && git for-each-ref refs/heads/ \"--format=%(refname:short)\" | while read branch; do mergeBase=$(git merge-base master $branch) && [[ $(git cherry master $(git commit-tree $(git rev-parse $branch^{tree}) -p $mergeBase -m _)) == \"-\"* ]] && git branch -D $branch; done; }; f"
+	cleanup = "!f() { git branch --merged | grep -v '(^\\*\\|main\\|dev)' | xargs -n1 git branch -d ; git checkout -q main && git for-each-ref refs/heads/ \"--format=%(refname:short)\" | while read branch; do mergeBase=$(git merge-base main $branch) && [[ $(git cherry main $(git commit-tree $(git rev-parse $branch^{tree}) -p $mergeBase -m _)) == \"-\"* ]] && git branch -D $branch; done; }; f"
 
 	# Initialize a new git repo, add everything, commit init message
 	start = !git init . && git add -A && git commit --allow-empty -m \"Initialize repository\"
@@ -54,6 +54,13 @@
 	# Enable an experimental heuristic that shifts the hunk boundary in an
 	# attempt to make the resulting patch easier to read.
 	indentHeuristic = true
+	tool = meld
+
+[difftool]
+	prompt = false
+
+[difftool "meld"]
+	cmd = meld "$LOCAL" "$REMOTE"
 
 [core]
 	compression = 9
