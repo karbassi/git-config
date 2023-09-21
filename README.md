@@ -5,7 +5,7 @@ Git looks in the `~/.config/git/config` file, which is specific to each user.
 ## Quick Install
 
 ```sh
-(mv ~/.config/git{,-bak} || mkdir -p ~/.config/git) && git clone --recurse-submodules https://github.com/karbassi/gitconfig.git ~/.config/git
+(mv ~/.config/git{,-bak} || mkdir -p ~/.config/git) && git clone --recurse-submodules https://github.com/karbassi/git-config.git ~/.config/git
 ```
 
 ## Installation
@@ -15,10 +15,10 @@ Git looks in the `~/.config/git/config` file, which is specific to each user.
 mv ~/.config/git{,-bak} || mkdir -p ~/.config/git
 
 # Clone current repo
-git clone --recursive https://github.com/karbassi/gitconfig.git ~/.config/git
+git clone --recursive https://github.com/karbassi/git-config.git ~/.config/git
 
-# Duplicate template file: local.template -> local
-cp ~/.config/git/local{.template,}
+# Duplicate example file: local.example -> local
+cp ~/.config/git/local{.example,}
 ```
 
 ## Additional
