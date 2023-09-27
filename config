@@ -45,9 +45,6 @@
 	# Detect whitespace errors when applying a patch
 	whitespace = fix
 
-[commit]
-	gpgsign = true
-
 [diff]
 	# Detect copies as well as renames
 	renames = copies
@@ -147,3 +144,4 @@
 # use separate file for username / github token / etc
 [include]
 	path = "local"
+
