@@ -12,6 +12,12 @@
 	# https://help.github.com/articles/creating-a-personal-access-token-for-the-command-line/
 	token = REPLACE
 
+[gpg]
+	format = ssh
+
+[gpg "ssh"]
+	program = "/Applications/1Password.app/Contents/MacOS/op-ssh-sign"
+
 [commit]
 	gpgsign = true
 
