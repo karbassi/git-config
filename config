@@ -62,6 +62,7 @@
 [core]
 	compression = 9
 	autocrlf = input
+	attributesfile = ~/.config/git/gitattributes
 
 [pager]
 	# Don't use pager for stash
